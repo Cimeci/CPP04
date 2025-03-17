@@ -6,17 +6,21 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 09:19:14 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/17 10:07:59 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/17 14:19:48 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 # define DOG_HPP
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
+# include "Brain.hpp"
 
-class Dog: public Animal{
-    
+class Dog: public AAnimal{
+
+    private:
+        Brain* brain;
+
     public:
         Dog();
         Dog(const Dog &cp);

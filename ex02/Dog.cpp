@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 09:23:44 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/17 10:44:02 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/17 14:20:33 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Cat.hpp"
+# include "Dog.hpp"
 # include "colors.hpp"
 
-Cat::Cat(){
-	type = "Cat";
-	std::cout << BLUE << "Cat class constructor\n" << RESET;
+Dog::Dog(){
+	brain = new Brain();
+	type = "Dog";
+	std::cout << GREEN << "Dog class constructor\n" << RESET;
 }
 
-Cat::~Cat(){
-	std::cout << BLUE << "Cat class destructor\n" << RESET;
+Dog::~Dog(){
+	delete brain;
+	std::cout << GREEN << "Dog class destructor\n" << RESET;
 }
 
-Cat::Cat(const Cat &cp){
-	*this = cp;
+Dog::Dog(const Dog &cp): AAnimal (cp){
+	brain = new Brain(*cp.brain);	
 }
 
-Cat &Cat::operator=(const Cat& op){
-	if (this != &op)
-		Animal::operator=(op);
+Dog &Dog::operator=(const Dog& op){
+	if (this != &op){
+		AAnimal::operator=(op);
+		*brain = *op.brain;
+	}
 	return (*this);        
 }
 
-void Cat::makeSound() const {
-	std::cout << BLUE << "MIAOUUUUUUUU !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n" << RESET;
+void Dog::makeSound() const {
+	std::cout << GREEN << "WOOOOOOOFFFF !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n" << RESET;
 }

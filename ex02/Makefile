@@ -6,7 +6,7 @@ NAME = Polymorphism
 
 OBJ_DIR = obj
 
-SRCS = main.cpp Dog.cpp Cat.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS = main.cpp Dog.cpp Cat.cpp AAnimal.cpp Brain.cpp
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
 

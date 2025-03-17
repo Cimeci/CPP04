@@ -2,11 +2,11 @@ CPP = c++
 
 CPPFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
-NAME = Polymorphism
+NAME = AMateria
 
 OBJ_DIR = obj
 
-SRCS = main.cpp Dog.cpp Cat.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS = main.cpp
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
 

@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/15 09:19:14 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/17 10:07:59 by inowak--         ###   ########.fr       */
+/*   Created: 2025/03/15 09:22:24 by inowak--          #+#    #+#             */
+/*   Updated: 2025/03/17 14:23:06 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+# include "colors.hpp"
 
-# include "Animal.hpp"
-
-class Dog: public Animal{
+int main(void)
+{
     
-    public:
-        Dog();
-        Dog(const Dog &cp);
-        Dog &operator=(const Dog& op);
-        ~Dog();
-
-        void makeSound() const override;
-};
-
-#endif
+}

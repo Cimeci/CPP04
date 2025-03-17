@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 09:23:44 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/17 10:44:02 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/17 14:17:56 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Cat.hpp"
-# include "colors.hpp"
+# include "AAnimal.hpp"
 
-Cat::Cat(){
-	type = "Cat";
-	std::cout << BLUE << "Cat class constructor\n" << RESET;
+AAnimal::AAnimal(): type("AAnimal"){
+    std::cout << "AAnimal class constructor\n";
 }
 
-Cat::~Cat(){
-	std::cout << BLUE << "Cat class destructor\n" << RESET;
+AAnimal::~AAnimal(){
+    std::cout << "AAnimal class destructor\n";
 }
 
-Cat::Cat(const Cat &cp){
-	*this = cp;
+AAnimal::AAnimal(const AAnimal &cp){
+    *this = cp;
 }
 
-Cat &Cat::operator=(const Cat& op){
-	if (this != &op)
-		Animal::operator=(op);
-	return (*this);        
+AAnimal &AAnimal::operator=(const AAnimal& op){
+    if (this != &op)
+        this->type = op.type;
+    return (*this);        
 }
 
-void Cat::makeSound() const {
-	std::cout << BLUE << "MIAOUUUUUUUU !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n" << RESET;
+std::string AAnimal::getType(void) const{
+    return type;
+}
+
+void AAnimal::makeSound() const{
+	std::cout << "AAnimal sound\n";
 }

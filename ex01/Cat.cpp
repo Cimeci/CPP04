@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 09:23:44 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/17 10:44:02 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/17 11:11:33 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,25 @@
 # include "colors.hpp"
 
 Cat::Cat(){
+	brain = new Brain();
 	type = "Cat";
 	std::cout << BLUE << "Cat class constructor\n" << RESET;
 }
 
 Cat::~Cat(){
+	delete brain;
 	std::cout << BLUE << "Cat class destructor\n" << RESET;
 }
 
-Cat::Cat(const Cat &cp){
-	*this = cp;
+Cat::Cat(const Cat &cp): Animal (cp){
+	brain = new Brain(*cp.brain);	
 }
 
 Cat &Cat::operator=(const Cat& op){
-	if (this != &op)
+	if (this != &op){
 		Animal::operator=(op);
+		*brain = *op.brain;
+	}
 	return (*this);        
 }
 

@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/15 09:23:44 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/17 10:44:02 by inowak--         ###   ########.fr       */
+/*   Created: 2025/03/17 10:26:46 by inowak--          #+#    #+#             */
+/*   Updated: 2025/03/17 10:43:22 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Cat.hpp"
+# include "WrongCat.hpp"
 # include "colors.hpp"
 
-Cat::Cat(){
-	type = "Cat";
-	std::cout << BLUE << "Cat class constructor\n" << RESET;
+WrongCat::WrongCat(){
+	type = "WrongCat";
+	std::cout << RED << "WrongCat class constructor\n" << RESET;
 }
 
-Cat::~Cat(){
-	std::cout << BLUE << "Cat class destructor\n" << RESET;
+WrongCat::~WrongCat(){
+	std::cout << RED << "WrongCat class destructor\n" << RESET;
 }
 
-Cat::Cat(const Cat &cp){
+WrongCat::WrongCat(const WrongCat &cp){
 	*this = cp;
 }
 
-Cat &Cat::operator=(const Cat& op){
+WrongCat &WrongCat::operator=(const WrongCat& op){
 	if (this != &op)
-		Animal::operator=(op);
+		WrongAnimal::operator=(op);
 	return (*this);        
 }
 
-void Cat::makeSound() const {
-	std::cout << BLUE << "MIAOUUUUUUUU !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n" << RESET;
+void WrongCat::makeSound() const {
+	std::cout << RED << "WRONG MIAOUUUUUUUU !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n" << RESET;
 }

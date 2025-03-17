@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/15 09:19:14 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/17 10:07:59 by inowak--         ###   ########.fr       */
+/*   Created: 2025/03/17 10:55:16 by inowak--          #+#    #+#             */
+/*   Updated: 2025/03/17 11:00:56 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-# include "Animal.hpp"
+# include <iostream>
 
-class Dog: public Animal{
+class Brain{
     
-    public:
-        Dog();
-        Dog(const Dog &cp);
-        Dog &operator=(const Dog& op);
-        ~Dog();
+    protected:
+        std::string ideas[100];
 
-        void makeSound() const override;
+    public:
+        Brain();
+        Brain(const Brain &cp);
+        Brain &operator=(const Brain &op);
+        ~Brain();
 };
 
 #endif
