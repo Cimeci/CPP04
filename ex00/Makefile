@@ -1,6 +1,6 @@
-CPP = c++
+CXX = c++
 
-CPPFLAGS = -g -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -g -Wall -Wextra -Werror -std=c++98
 
 NAME = Polymorphism
 
@@ -13,11 +13,11 @@ OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CPP) $(CPPFLAGS) -o $(NAME) $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
 $(OBJ_DIR)/%.o: %.cpp
 	@mkdir -p $(OBJ_DIR)
-	$(CPP) $(CFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ_DIR)
