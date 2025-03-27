@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 09:50:59 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/27 17:09:25 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/27 17:32:36 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void MateriaSource::learnMateria(AMateria *m){
             }
         }
         delete m;
-        // std::cout << RED << "Use of inventory of MateriaSource is " << i + 1  << "/4\n" << RESET;
+        std::cout << RED << "Use of inventory of MateriaSource is " << i + 1  << "/4\n" << RESET;
     }
 }
 
