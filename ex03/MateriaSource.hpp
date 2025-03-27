@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/18 10:06:10 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/18 11:02:25 by inowak--         ###   ########.fr       */
+/*   Created: 2025/03/27 09:51:09 by inowak--          #+#    #+#             */
+/*   Updated: 2025/03/27 13:35:13 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
-# include <iostream>
-# include "ICharacter.hpp"
+# include "IMateriaSource.hpp"
+# include "AMateria.hpp"
 
-class AMateria
+class MateriaSource : public IMateriaSource
 {
-	protected:
-		std::string type;
-	
-	public:
-	
-		AMateria(std::string const & type);
-		AMateria();
-		AMateria(const AMateria &cp);
-		AMateria &operator=(const AMateria &op);
-		
-		std::string const & getType() const;
-		virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
+    private:
+        AMateria *inventory[4];
+    
+    public:
+        MateriaSource();
+        MateriaSource(const MateriaSource &cp);
+        MateriaSource &operator=(const MateriaSource &op);
+        ~MateriaSource();
+
+        void learnMateria(AMateria*);
+		AMateria* createMateria(std::string const & type);
 };
 
 #endif

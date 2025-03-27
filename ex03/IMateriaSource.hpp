@@ -6,14 +6,14 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 15:43:02 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/18 15:44:54 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/27 14:24:04 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef IMATERIASOURCE_HPP
 # define IMATERIASOURCE_HPP
 
-# include "MateriaSource.hpp"
+# include "AMateria.hpp"
 
 class IMateriaSource
 {

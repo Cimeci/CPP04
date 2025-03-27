@@ -1,41 +1,83 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/18 11:22:15 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/18 11:29:42 by inowak--         ###   ########.fr       */
+/*   Created: 2025/03/27 09:50:59 by inowak--          #+#    #+#             */
+/*   Updated: 2025/03/27 17:09:25 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "AMateria.hpp"
+# include "MateriaSource.hpp"
 
-AMateria::AMateria(std::string const & type): type(type){
-	std::cout << "AMateria constructor type\n";
-};
-
-AMateria::AMateria(){
-	std::cout << "AMateria constructor\n";
-};
-
-AMateria::AMateria(const AMateria &cp){
-	std::cout << "AMateria copy constructor\n";
-	*this = cp;
-};
-
-AMateria &AMateria::operator=(const AMateria &op){
-	std::cout << "AMateria assignement operator\n";
-	if (this != &op)
-		type = op.type;
-	return (*this);
-};
-
-std::string const &AMateria::getType()const{
-	return(type);
+MateriaSource::MateriaSource(){
+    // std::cout << "MateriaSource constructor\n";
+    for (int i = 0; i < 4; i++)
+			inventory[i] = NULL;
 }
 
-void AMateria::use(ICharacter& target){
-	
+MateriaSource::MateriaSource(const MateriaSource &cp){
+    // std::cout << "MateriaSource copy constructor\n";
+	for (int i = 0; i < 4; i++)
+	{
+		if (cp.inventory[i])
+			inventory[i] = cp.inventory[i]->clone(); // deep copy
+		else
+			inventory[i] = NULL;
+	}
+}
+
+MateriaSource &MateriaSource::operator=(const MateriaSource &op){
+	if (this != &op)
+    {
+		for (int i = 0; i < 4; i++)
+        {
+			delete inventory[i];
+			if (op.inventory[i])
+				inventory[i] = op.inventory[i]->clone(); // deep copy
+			else
+				inventory[i] = NULL;
+		}
+	}
+	return *this;
+}
+
+MateriaSource::~MateriaSource(){
+    for (int i = 0; i < 4; i++)
+    {
+        if (inventory[i])
+            delete inventory[i];
+    }
+    // std::cout << "MateriaSource constructor\n";
+}
+
+void MateriaSource::learnMateria(AMateria *m){
+    int i;
+    
+    if (m)
+    {
+        for (i = 0; i < 4; i++)
+        {
+            if (inventory[i] == NULL)
+            {
+                inventory[i] = m->clone();
+                break;
+            }
+        }
+        delete m;
+        // std::cout << RED << "Use of inventory of MateriaSource is " << i + 1  << "/4\n" << RESET;
+    }
+}
+
+AMateria *MateriaSource::createMateria(std::string const & type){
+    for (int i = 0; i < 4; i++)
+    {
+        if (inventory[i] && inventory[i]->getType() == type){
+            std::cout << BLUE << "Create Materia with " << type << " type\n" << RESET;
+            return inventory[i]->clone();
+        }
+    }
+    return (NULL);
 }
