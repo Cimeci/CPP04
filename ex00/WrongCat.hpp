@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 10:27:10 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/17 10:31:06 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/28 10:40:26 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class WrongCat: public WrongAnimal{
 		WrongCat &operator=(const WrongCat& op);
 		~WrongCat();
 
-		void makeSound() const override;
+		void makeSound() const;
 };
 
 #endif

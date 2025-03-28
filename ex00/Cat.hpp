@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 09:20:57 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/17 10:07:56 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/28 10:40:14 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Cat: public Animal{
         Cat &operator=(const Cat& op);
         ~Cat();
 
-        void makeSound() const override;
+        void makeSound() const;
 };
 
 #endif

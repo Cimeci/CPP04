@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 09:22:24 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/17 10:46:52 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/28 10:40:48 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
 int main(void)
 {   
     std::cout << PURPLE;
-    std::cout << "-------------------------------------\n";
-    std::cout << "-            Classic Part           -\n";
-    std::cout << "-------------------------------------\n";
+    std::cout << "+-----------------------------------+\n";
+    std::cout << "|            Classic Part           |\n";
+    std::cout << "+-----------------------------------+\n";
     std::cout << RESET;
 
     const Animal* meta = new Animal();
@@ -43,9 +43,9 @@ int main(void)
     delete i;
     
     std::cout << ORANGE;
-    std::cout << "-------------------------------------\n";
-    std::cout << "-             Wrong Part            -\n";
-    std::cout << "-------------------------------------\n";
+    std::cout << "+-----------------------------------+\n";
+    std::cout << "|             Wrong Part            |\n";
+    std::cout << "+-----------------------------------+\n";
     std::cout << RESET;
     
     const WrongAnimal* wrong = new WrongAnimal();
