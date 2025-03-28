@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 11:16:35 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/17 11:35:13 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/28 14:35:02 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,12 @@ Brain &Brain::operator=(const Brain &op){
 
 Brain::~Brain(){
     std::cout << PURPLE << "Brain class destructor\n" << RESET;
+}
+
+std::string Brain::getIdea(int idx) const{
+    return (ideas[idx]);
+}
+
+void Brain::setIdea(int index, const std::string& idea){
+    ideas[index] = idea;
 }

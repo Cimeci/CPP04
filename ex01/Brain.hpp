@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 10:55:16 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/17 11:00:56 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/28 14:35:29 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ class Brain{
         Brain(const Brain &cp);
         Brain &operator=(const Brain &op);
         ~Brain();
+
+        std::string getIdea(int idx) const;
+        void setIdea(int index, const std::string& idea);
 };
 
 #endif

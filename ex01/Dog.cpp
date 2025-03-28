@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 09:23:44 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/17 11:17:20 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/28 15:43:13 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,8 @@ Dog &Dog::operator=(const Dog& op){
 
 void Dog::makeSound() const {
 	std::cout << GREEN << "WOOOOOOOFFFF !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n" << RESET;
+}
+
+Brain *Dog::getBrain(){
+	return (brain);
 }
