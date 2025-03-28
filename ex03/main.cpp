@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 09:22:24 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/28 10:30:32 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/28 10:45:20 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,6 @@ int main()
     
     std::cout << "\nError type unknow :\n";
     tmp = src->createMateria("ERROR");
-
-    std::cout << "\nError type unknow :\n";
 
     std::cout << "\nError index use :\n";
     me->use(5, *bob);

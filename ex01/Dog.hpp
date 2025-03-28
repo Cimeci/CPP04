@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 09:19:14 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/17 11:08:00 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/28 10:41:58 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Dog: public Animal{
         Dog &operator=(const Dog& op);
         ~Dog();
 
-        void makeSound() const override;
+        void makeSound() const;
 };
 
 #endif
