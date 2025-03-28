@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/27 09:50:59 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/27 17:32:36 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/28 09:56:24 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,10 @@ void MateriaSource::learnMateria(AMateria *m){
             }
         }
         delete m;
-        std::cout << RED << "Use of inventory of MateriaSource is " << i + 1  << "/4\n" << RESET;
+        if (i < 4)
+            std::cout << GREEN << "Use of inventory of MateriaSource is " << i + 1  << "/4\n" << RESET;
+        else
+            std::cout << RED << "Use of inventory of MateriaSource is full\n" << RESET;
     }
 }
 
@@ -79,5 +82,6 @@ AMateria *MateriaSource::createMateria(std::string const & type){
             return inventory[i]->clone();
         }
     }
+    std::cout << PURPLE << "Unknow type: \"" << type << "\" in materia inventory\n" << RESET;
     return (NULL);
 }

@@ -6,20 +6,20 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 15:04:50 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/27 16:53:15 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/28 10:27:31 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Character.hpp"
 
-Character::Character() : name("default"){
-	// std::cout << "Character constructor\n";
+Character::Character(std::string const & name) : name(name){
+	// std::cout << "Character constructor name\n";
 	for (int i = 0; i < 4; i++)
 		inventory[i] = NULL;
 }
 
-Character::Character(std::string const & name) : name(name){
-	// std::cout << "Character constructor name\n";
+Character::Character() : name("default"){
+	// std::cout << "Character constructor\n";
 	for (int i = 0; i < 4; i++)
 		inventory[i] = NULL;
 }
@@ -71,7 +71,7 @@ void Character::equip(AMateria* m){
 			return ;
 		}
 	}
-	std::cout << "Materia inventory full\n";
+	std::cout << RED << "Materia inventory full\n" << RESET;
 	delete m;
 }
 
@@ -84,6 +84,10 @@ void Character::unequip(int idx) {
 void Character::use(int idx, ICharacter& target) {
     if (idx >= 0 && idx < 4 && inventory[idx] != NULL) {
         inventory[idx]->use(target);
-		
+		return ;
     }
+	if (!(idx >= 0 && idx < 4))
+		std::cout << YELLOW << idx << " is a invalid value, the index must be between 0 and 3\n" << RESET;
+	else
+		std::cout << YELLOW << "The value at " << idx << " in the inventory is empty\n" << RESET;
 }

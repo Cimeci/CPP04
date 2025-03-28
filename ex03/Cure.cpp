@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 11:20:49 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/27 15:53:20 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/28 10:27:38 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ Cure* Cure::clone() const {
 }
 
 void Cure::use(ICharacter& target) {
-    std::cout << "* heals " << target.getName() << "'s wounds *\n";
+    std::cout << ORANGE << "CURE USE " << RESET << "* heals " << target.getName() << "'s wounds *\n";
 }

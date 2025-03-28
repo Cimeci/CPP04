@@ -6,7 +6,7 @@
 /*   By: inowak-- <inowak--@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 09:22:24 by inowak--          #+#    #+#             */
-/*   Updated: 2025/03/27 16:52:13 by inowak--         ###   ########.fr       */
+/*   Updated: 2025/03/28 10:30:32 by inowak--         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,33 @@ int main()
     
     tmp = src->createMateria("cure");
     me->equip(tmp);
-
+    
     ICharacter* bob = new Character("bob");
     me->use(0, *bob);
     me->use(1, *bob);
+
+    std::cout << "------- MORE TEST -------\n";
+
+    std::cout << "\nError full inventory :\n";
+    src->learnMateria(new Cure());
+    src->learnMateria(new Cure());
+    src->learnMateria(new Cure());
+    src->learnMateria(new Cure());
+    src->learnMateria(new Cure());
+    
+    std::cout << "\nError full inventory :\n";
+    for (int i = 0; i < 4; i++){
+        tmp = src->createMateria("cure");
+        me->equip(tmp);
+    }
+    
+    std::cout << "\nError type unknow :\n";
+    tmp = src->createMateria("ERROR");
+
+    std::cout << "\nError type unknow :\n";
+
+    std::cout << "\nError index use :\n";
+    me->use(5, *bob);
 
     delete bob;
     delete me;
